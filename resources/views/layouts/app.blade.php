@@ -10,8 +10,25 @@
 </head>
 <body>
     @include('includes.header')
-    @yield('content')
 
-    @include('includes.aside')
+    @if(Request::is('/'))
+        @include('includes.hero')
+    @endif
+
+    <div class="container">
+
+        @include("includes.messages")
+
+        <div class="row">
+            <div class="col-8">
+                @yield('content')
+            </div>
+            <div class="col-4">
+                @include('includes.aside')
+            </div>
+        </div>
+    </div>
+
+    @include('includes.footer')
 </body>
 </html>
