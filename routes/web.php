@@ -25,4 +25,6 @@ Route::get('/contact/all/{id}/update', [ContactController::class, 'updateMessage
 
 Route::post('/contact/all/{id}/update', [ContactController::class, 'updateMessageSubmit'])->name('contact-update-submit');
 
+Route::get('/contact/all/{id}/delete', [ContactController::class, 'deleteMessage'])->name('contact-delete');
+
 
